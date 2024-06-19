@@ -18,13 +18,13 @@
 
             <ul class="sidebar-list">
                 <li class="nav-item" onclick="hideSidebar()">
-                    <a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                    <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
+                    <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Play Game</a>
@@ -54,7 +54,7 @@
             </ul>
         </nav>
     </header>
-
+        
     <article class="hero">
         <div class="hero-logo">
             <!-- Insert logo image -->
@@ -80,6 +80,35 @@
                 <p>In <span>Final Number</span> you have to use your maths skills to try to get a certain total number using only 6 numbers and you can only choose 1 of each number to calculate the total</p>
             </div>
         </article>
+
+        <br><br>
+        <!-- Play game section -->
+
+        <div class="game-container">
+            <div class="displayer">
+                <input type="text" id="display" readonly>
+            </div>
+
+
+            <div class="keys">
+                <div class="num-keys">
+                    <button id="btn-one">1</button>
+                    <button id="btn-two">1</button>
+                    <button id="btn-three">1</button>
+                    <button id="btn-four">1</button>
+                    <button id="btn-five">1</button>
+                    <button id="btn-six">1</button>
+                </div>
+
+                <div class="calc-keys">
+                    <button id="add-btn">+</button>
+                    <button id="minus-btn">-</button>
+                    <button id="multiply-btn">*</button>
+                    <button id="devide-btn">/</button>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
