@@ -10,40 +10,49 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <!-- Add a text that logo written final Number theme is read and black -->
-            <a href="/">
-                <img src="" alt="Final Number">
-            </a>
-        </div>
-
         <nav class="navbar">
+
+            <ul class="sidebar-list">
+                <li class="nav-item" onclick="hideSidebar()">
+                    <a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Play Game</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contacts</a>
+                </li>
+            </ul>
+
             <ul class="nav-list">
-
-                <li class="nav-items">
-                    <a href="#" class="nav-links">Home</a>
+                <li class="nav-item" >
+                    <a href="#" class="nav-link hideOnMobile">Home</a>
                 </li>
-
-                <li class="nav-items">
-                    <a href="#" class="nav-links">About</a>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hideOnMobile">About</a>
                 </li>
-                
-                <li class="nav-items">
-                    <a href="#" class="nav-links">Play Game</a>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hideOnMobile">Play Game</a>
                 </li>
-
-                <li class="nav-items">
-                    <a href="#" class="nav-links">Contacts</a>
+                <li class="nav-item">
+                    <a href="#" class="nav-link hideOnMobile">Contacts</a>
+                </li>
+                <li class="nav-item menu-btn" onclick="showSidebar()">
+                    <a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
                 </li>
 
             </ul>
 
-            <div class="toggle-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" class="nav-close"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-            </div>
         </nav>
     </header>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+    </script>
 </body>
 </html>
