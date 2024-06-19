@@ -50,7 +50,7 @@
 /* >> RESPONSIVE WEBS */
 @media (max-width: 992px) {
     .nav-list   {
-        display: none;
+        
     }
 
     .navbar .toggle-btn {
