@@ -64,16 +64,17 @@ function displaySymbol(n){
 
 // A function that display the number values on the input 
 let currentChallengeIndex = 0;
+let score = 0
 function displayNumber(){
-    const currentChallenge = numbers[currentChallengeIndex]
+    let currentChallenge = numbers[currentChallengeIndex]
 
     console.log(currentChallenge)
-    const one = currentChallenge.numChoices[0].firstNum
-    const two = currentChallenge.numChoices[1].seconNum
-    const three = currentChallenge.numChoices[2].thirdNum
-    const four = currentChallenge.numChoices[3].fouthNum
-    const five = currentChallenge.numChoices[4].fithNum
-    const six = currentChallenge.numChoices[5].sixthNum
+    let one = currentChallenge.numChoices[0].firstNum
+    let two = currentChallenge.numChoices[1].seconNum
+    let three = currentChallenge.numChoices[2].thirdNum
+    let four = currentChallenge.numChoices[3].fouthNum
+    let five = currentChallenge.numChoices[4].fithNum
+    let six = currentChallenge.numChoices[5].sixthNum
 
     buttonOne.textContent = one
     buttonTwo.textContent = two
@@ -106,13 +107,28 @@ function displayNumber(){
     document.getElementById("submit").onclick = ()=>{
         total = eval(displayer.value)
         currentChallenge
-        if (total === currentChallenge.finalNumber){
-            console.log("might be close")
-            currentChallengeIndex++;
-            displayNumber()
+        if (currentChallengeIndex < numbers.length){
+            if (total === currentChallenge.finalNumber){
+                currentChallengeIndex++;
+                score++;
+                displayer.value = ""
+                displayNumber();
+            }
+
+            else{
+                alert(`I was looking for FINAL NUMBER:${currentChallenge.finalNumber} you gave me ${total}`)
+                currentChallengeIndex++;
+                score--;
+                displayer.value = ""
+                displayNumber();
+            }
+        }
+
+        else{
+            console.log("Game Over")
         }
     }
-    console.log(currentChallengeIndex)
+    console.log(score);
 
 
     
