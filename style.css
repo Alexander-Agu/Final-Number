@@ -271,4 +271,12 @@
             font-weight: bolder;
         }
 
+        #submit {
+            height: 40px;
+            padding: 12px;
+            background: white;
+            outline: none;
+            border: 2px solid red;
+        }
+
 }

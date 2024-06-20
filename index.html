@@ -48,7 +48,7 @@
                     <a href="#" class="nav-link hideOnMobile">Contacts</a>
                 </li>
                 <li class="nav-item menu-btn" onclick="showSidebar()">
-                    <a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                    <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
                 </li>
 
             </ul>
@@ -90,7 +90,7 @@
             </div>
 
 
-            <div class="keys">
+            <div class="keys" id="buttons">
                 <div class="num-keys">
                     <button id="btn-one">1</button>
                     <button id="btn-two">1</button>
@@ -101,13 +101,15 @@
                 </div>
 
                 <div class="calc-keys">
-                    <button id="add-btn">+</button>
-                    <button id="minus-btn">-</button>
-                    <button id="multiply-btn">*</button>
-                    <button id="devide-btn">/</button>
+                    <button id="add-btn" onclick="displaySymbol('+')">+</button>
+                    <button id="minus-btn" onclick="displaySymbol('-')">-</button>
+                    <button id="multiply-btn" onclick="displaySymbol('*')">*</button>
+                    <button id="devide-btn" onclick="displaySymbol('/')">/</button>
                 </div>
 
             </div>
+
+            <button id="submit"><span>Final Number</span></button>
         </div>
     </main>
 
