@@ -96,6 +96,7 @@ function displayNumber(){
     buttonfour.textContent = four
     buttonfive.textContent = five
     buttonSix.textContent = six
+    document.getElementById("final").textContent = currentChallenge.finalNumber
     
 
     // Click event for each button to display their value on the input screen
@@ -142,20 +143,53 @@ function displayNumber(){
     }
 
     else if( currentChallengeIndex == numbers.length - 1){  // Base case for the ending of Recursion
-        
+//                                                              When the base case is reached the iteration should stop and clear the buttons of its values
         document.getElementById("submit").onclick = ()=>{
+
             currentChallengeIndex++;
             total = eval(displayer.value)
             if (total === currentChallenge.finalNumber){
                 score++;
-                displayer.value = ""
-                buttonOne.textContent = ''
+                displayer.value = "";
+                buttonOne.textContent = '';
+                buttonTwo.textContent = '';
+                buttonThree.textContent = '';
+                buttonfour.textContent = '';
+                buttonfive.textContent = '',
+                buttonSix.textContent = '';
+
+                document.getElementById("massage").textContent = "Your Final Score Is:"
+                document.getElementById("score").textContent = `${score}`
+
+                let gameContainer = document.getElementById("submit-btn");
+                gameContainer.innerHTML = ""
+
+                if(score === numbers.length){
+                    document.getElementById("my-massage").textContent = "You got a perfect score, you are clearly better at maths than me"
+                }
+
+
             }
     
             else{
                 alert(`I was looking for FINAL NUMBER:${currentChallenge.finalNumber} you gave me ${total}`)
-                displayer.value = ""
-                buttonOne.textContent = ''
+                displayer.value = "";
+                buttonOne.textContent = '';
+                buttonTwo.textContent = '';
+                buttonThree.textContent = '';
+                buttonfour.textContent = '';
+                buttonfive.textContent = '',
+                buttonSix.textContent = '';
+
+                document.getElementById("massage").textContent = "Your Final Score Is:"
+                document.getElementById("score").textContent = `${score}`
+
+                let gameContainer = document.getElementById("submit-btn");
+                gameContainer.innerHTML = ""
+
+                if(score === numbers.length){
+                    document.getElementById("my-massage").textContent = "You got a perfect score, you are clearly better at maths than me"
+                }
             }
         }
     }
@@ -178,12 +212,7 @@ function displayNumber(){
             console.log("Game Over")
         }
     } */
-    
-    console.log(score);
-    return
-
-
-    
 }
 
 displayNumber()
+console.log(score)

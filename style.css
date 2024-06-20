@@ -278,5 +278,28 @@
             outline: none;
             border: 2px solid red;
         }
+    /* > Results */
+        .results    {
 
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .results h1,
+        .results h2,
+        .results p {
+            color: red;
+            font-family: "Permanent Marker", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .results p  {
+            text-align: center;
+            padding: 20px;
+        }
 }

@@ -85,6 +85,7 @@
         <!-- Play game section -->
 
         <div class="game-container">
+            <h2><span>Final Number</span> <p id="final"></p> </h2>
             <div class="displayer">
                 <input type="text" id="display" readonly>
             </div>
@@ -107,9 +108,25 @@
                     <button id="devide-btn" onclick="displaySymbol('/')">/</button>
                 </div>
 
+                <br>
+
+                <h2 id="results"></h2>
+
             </div>
 
-            <button id="submit"><span>Final Number</span></button>
+            <div id="submit-btn">
+                <button id="submit"><span>Final Number</span></button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="results">
+            <h2 id="massage"></h2>
+            <br>
+            <h1 id="score"></h1>
+            <br>
+            <p id="my-massage"></p>
         </div>
     </main>
 
