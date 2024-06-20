@@ -27,10 +27,7 @@
                     <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Play Game</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Contacts</a>
+                    <a href="#playgame" class="nav-link">Play Game</a>
                 </li>
             </ul>
 
@@ -39,16 +36,13 @@
                     <a href="#" class="nav-link hideOnMobile">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link hideOnMobile">About</a>
+                    <a href="#about" class="nav-link hideOnMobile">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link hideOnMobile">Play Game</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link hideOnMobile">Contacts</a>
+                    <a href="#playgame" class="nav-link hideOnMobile">Play Game</a>
                 </li>
                 <li class="nav-item menu-btn" onclick="showSidebar()">
-                    <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                    <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
                 </li>
 
             </ul>
@@ -56,12 +50,12 @@
     </header>
         
     <article class="hero">
-        <div class="hero-logo">
+        <div class="hero-logo hidden">
             <!-- Insert logo image -->
             <img src="img/finalnumber white.jpg" alt="Final Number">
         </div>
 
-        <div class="hero-intro">
+        <div class="hero-intro hidden">
             <p>Welcome to <span>Final Number</span> where your maths skills will be heavenly tested <br>
             Don't worry it won't be as hard as you think I mean I'm not a maths genius myself</p>
         </div>
@@ -72,11 +66,11 @@
     <main class="main">
         <!-- The about section telling people what the game is about -->
         <article id="about">
-            <div class="about-logo">
+            <div class="about-logo hidden">
                 <img src="img/finalnumber black2.jpg" alt="Final Number">
             </div>
 
-            <div class="about">
+            <div class="about hidden">
                 <p>In <span>Final Number</span> you have to use your maths skills to try to get a certain total number using only 6 numbers and you can only choose 1 of each number to calculate the total</p>
             </div>
         </article>
@@ -84,28 +78,28 @@
         <br><br>
         <!-- Play game section -->
 
-        <div class="game-container">
-            <h2><span>Final Number</span> <p id="final"></p> </h2>
-            <div class="displayer">
+        <div class="game-container" id="playgame">
+            <h2 class="heading hidden"><span>Final Number</span> <p id="final"></p> </h2>
+            <div class="displayer hidden">
                 <input type="text" id="display" readonly>
             </div>
 
 
             <div class="keys" id="buttons">
                 <div class="num-keys">
-                    <button id="btn-one">1</button>
-                    <button id="btn-two">1</button>
-                    <button id="btn-three">1</button>
-                    <button id="btn-four">1</button>
-                    <button id="btn-five">1</button>
-                    <button id="btn-six">1</button>
+                    <button id="btn-one" class="hidden">1</button>
+                    <button id="btn-two" class="hidden">1</button>
+                    <button id="btn-three" class="hidden">1</button>
+                    <button id="btn-four" class="hidden">1</button>
+                    <button id="btn-five" class="hidden">1</button>
+                    <button id="btn-six" class="hidden">1</button>
                 </div>
 
                 <div class="calc-keys">
-                    <button id="add-btn" onclick="displaySymbol('+')">+</button>
-                    <button id="minus-btn" onclick="displaySymbol('-')">-</button>
-                    <button id="multiply-btn" onclick="displaySymbol('*')">*</button>
-                    <button id="devide-btn" onclick="displaySymbol('/')">/</button>
+                    <button id="add-btn" class="hidden" onclick="displaySymbol('+')">+</button>
+                    <button id="minus-btn" class="hidden" onclick="displaySymbol('-')">-</button>
+                    <button id="multiply-btn" class="hidden" onclick="displaySymbol('*')">*</button>
+                    <button id="devide-btn" class="hidden" onclick="displaySymbol('/')">/</button>
                 </div>
 
                 <br>
@@ -114,14 +108,14 @@
 
             </div>
 
-            <div id="submit-btn">
+            <div id="submit-btn" class="hidden">
                 <button id="submit"><span>Final Number</span></button>
             </div>
         </div>
 
         <br>
 
-        <div class="results">
+        <div class="results hidden">
             <h2 id="massage"></h2>
             <br>
             <h1 id="score"></h1>

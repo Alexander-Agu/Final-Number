@@ -49,7 +49,7 @@
     .header {
         height: 80px;
         padding: 16px;
-        position: fixed;
+        width: 100%;
 
         background-color: white;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@
     }
 /* > Logo */
     .logo img   {
-        width: 40%;
+        width: 100px;
         height: 50%;
     }
 /* > Navbar */
@@ -86,10 +86,31 @@
         color: black;
         padding:  0 30px;
         height: 50px;
+        font-family: "Chivo", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        transition: 300ms;
 
         display: flex;
         align-items: center;
 
+    }
+
+    .nav-item:first-child  .nav-link {
+        color: red;
+        background-color: black;
+        font-weight: bolder;
+        border-radius: 30px;
+        transition: 300ms;
+    }
+    .nav-item:first-child  .nav-link:hover  {
+        background: red;
+        color: black;
+        transition: 300ms;
+    }
+    .nav-link:hover {
+        color: red;
+        transition: 300ms;
     }
 
     .menu-btn   {
@@ -120,7 +141,260 @@
 
 
 /* >> HERO STYLES */
+    .hero   {
+        height: 100vh;
+        width: 100%;
+        padding: 18px;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .hero img   {
+        width: 300px;
+    }
+
+    .hero-intro {
+        padding: 16px;
+        text-align: center;
+        font-size: 30px;
+
+        font-family: "Chivo", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+/*  */
+
+
+/* >> MAIN STYLES */
+/* > About Article */
+    #about  {
+        padding: 20px;
+        background-color: black;
+        color: white;
+        
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about-logo img  {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .about  {
+        font-size: 30px;
+        padding: 30px;
+        text-align: center;
+        font-family: "Chivo", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+/* > Play Game */
+    .game-container {
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .heading   {
+        font-size: 50px;
+    }
+    #final  {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .displayer  {
+        border: 2px solid red;
+        border-radius: 12px;
+        padding: 8px;
+        width: 50%;
+        height: 100px;
+
+    }
+
+    #display    {
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: rgba(255, 0, 0, 0.685);
+        border-radius: 12px;
+        text-align: center;
+        font-size: 30px;
+
+    }
+
+    /* > Keys */
+    .keys   {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .num-keys   {
+
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .num-keys button    {
+        width: 80px;
+        height: 80px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 12px;
+        border: none;
+        outline: none;
+        color: red;
+        font-size: 22px;
+        background-color: black;
+        font-weight: bolder;
+        transition: 300ms;
+    }
+
+    .num-keys button:hover{
+        border-radius: 50%;
+        background-color: red;
+        color: black;
+    }
+    .calc-keys button:hover{
+        background-color: black;
+        color: red;
+    }
+
+    .calc-keys  {
+        width: 80%;
+        padding: 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+    }
+
+    .calc-keys button   {
+        transition: 300ms;
+        width: 104px;
+        height: 94px;
+        border: 3px solid black;
+        border-radius: 16px;
+        background-color: red;
+        outline: none;
+        font-size: 25px;
+        font-weight: bolder;
+    }
+
+    #submit {
+        height: 40px;
+        padding: 12px;
+        background: white;
+        outline: none;
+        border: 2px solid red;
+        scale: 1.5;
+    }
+/* > Results */
+    .results    {
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .results h1,
+    .results h2,
+    .results p {
+        color: red;
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+    }
+
+
+    .results p  {
+        text-align: center;
+        padding: 20px;
+    }
+/*  */
+
+/* ----------SCROLL ANIMATION STYLE---------- */
+    .hidden {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition: 1.5s;
+    }
+
+    .show   {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    .hero-logo  {
+        transition-delay: 300ms;
+    }
+    .hero-intro {
+        transition-delay: 100ms;
+    }
+
+    .about-logo{
+        transition-delay: 200ms;
+    }
+    .about{
+        transition-delay: 400ms;
+    }
+
+    #btn-one{
+        transition-delay: 100ms;
+    }
+    #btn-two{
+        transition-delay: 200ms;
+    }
+    #btn-three{
+        transition-delay: 300ms;
+    }
+    #btn-four{
+        transition-delay: 400ms;
+    }
+    #btn-five{
+        transition-delay: 500ms;
+    }
+    #btn-six{
+        transition-delay: 600ms;
+    }
+
+
+    #multiply-btn{
+        transition-delay: 600ms;
+    }
+    #add-btn{
+        transition-delay: 400ms;
+    }
+    #minus-btn{
+        transition-delay: 500ms;
+    }
+    #devide-btn{
+        transition-delay: 700ms;
+    }
+/*  */
 
 /* >> RESPONSIVE WEBS */
 @media (max-width: 550px) {
@@ -134,11 +408,27 @@
         .menu-btn   {
             display: block;
         }
+
+        .nav-item:first-child  .nav-link  {
+            background: transparent;
+            color: white;
+        }
+        .nav-link {
+            color: white;
+            border-bottom: 1px solid red;
+        }
+        .nav-link:hover {
+            color: white;
+        }
+        .nav-link:active {
+            color: white;
+            background-color: red;
+        }
     /*  */
 
     /* >> HERO STYLES */
         .hero   {
-            height: 70vh;
+            height: 100vh;
             width: 100%;
             padding: 18px;
 
@@ -149,13 +439,14 @@
         }
 
         .hero img   {
-            width: 100%;
-            height: 100%;
+            width: 200px;
+            height: 200px;
         }
 
         .hero-intro {
             padding: 16px;
             text-align: center;
+            font-size: 18px;
 
             font-family: "Chivo", sans-serif;
             font-optical-sizing: auto;
@@ -184,6 +475,7 @@
         }
 
         .about  {
+            font-size: 18px;
             font-family: "Chivo", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
@@ -200,22 +492,32 @@
             gap: 1rem;
         }
 
+        .heading   {
+            font-size: 30px;
+        }
+        #final  {
+            text-align: center;
+            font-size: 30px;
+        }
+
         .displayer  {
             border: 2px solid red;
             border-radius: 12px;
             padding: 8px;
             width: 80%;
-
+            height: 50px;
         }
 
         #display    {
-            height: 35px;
+            height: 100%;
             width: 100%;
             border: none;
             outline: none;
             background-color: rgba(255, 0, 0, 0.685);
             border-radius: 12px;
             text-align: center;
+            font-size: 18px;
+            font-weight: bolder;
         }
 
     /* > Keys */
@@ -249,6 +551,16 @@
             border-radius: 12px;
         }
 
+        .num-keys button:hover{
+            border-radius: 12px;
+            background-color: black;
+            color: red;
+        }
+        .calc-keys button:hover{
+            background-color: red;
+            color: black;
+        }
+
         .calc-keys  {
             width: 80%;
             padding: 16px;
@@ -277,6 +589,7 @@
             background: white;
             outline: none;
             border: 2px solid red;
+            scale: 1;
         }
     /* > Results */
         .results    {
@@ -295,6 +608,7 @@
             font-family: "Permanent Marker", cursive;
             font-weight: 400;
             font-style: normal;
+            font-size: 18px;
         }
 
 

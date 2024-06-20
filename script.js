@@ -29,15 +29,16 @@ const buttonfour = document.getElementById("btn-four");
 const buttonfive = document.getElementById("btn-five");
 const buttonSix = document.getElementById("btn-six");
 const buttons = document.getElementById("buttons");
+
 const numbers = [
     {
-        finalNumber: 7,
+        finalNumber: 10,
         numChoices: [
-            {firstNum: '4'},
-            {seconNum: '6'},
+            {firstNum: '20'},
+            {seconNum: '4'},
             {thirdNum: '5'},
             {fouthNum: '2'},
-            {fithNum: '8'},
+            {fithNum: '9'},
             {sixthNum: '9'}
         ],
     },
@@ -53,14 +54,91 @@ const numbers = [
         ],
     },
     {
-        finalNumber: 7,
+        finalNumber: 24,
+        numChoices: [
+            {firstNum: '3'},
+            {seconNum: '8'},
+            {thirdNum: '12'},
+            {fouthNum: '1'},
+            {fithNum: '7'},
+            {sixthNum: '4'}
+        ],
+    },
+    {
+        finalNumber: 150,
+        numChoices: [
+            {firstNum: '30'},
+            {seconNum: '2'},
+            {thirdNum: '12'},
+            {fouthNum: '5'},
+            {fithNum: '3'},
+            {sixthNum: '4'}
+        ],
+    },
+    {
+        finalNumber: 25,
         numChoices: [
             {firstNum: '6'},
-            {seconNum: '8'},
-            {thirdNum: '1'},
+            {seconNum: '3'},
+            {thirdNum: '12'},
+            {fouthNum: '4'},
+            {fithNum: '2'},
+            {sixthNum: '5'}
+        ],
+    },
+    {
+        finalNumber: 1,
+        numChoices: [
+            {firstNum: '2'},
+            {seconNum: '30'},
+            {thirdNum: '120'},
+            {fouthNum: '6'},
+            {fithNum: '13'},
+            {sixthNum: '40'}
+        ],
+    },
+    {
+        finalNumber: 30,
+        numChoices: [
+            {firstNum: '1'},
+            {seconNum: '27'},
+            {thirdNum: '14'},
             {fouthNum: '2'},
-            {fithNum: '7'},
-            {sixthNum: '1'}
+            {fithNum: '13'},
+            {sixthNum: '10'}
+        ],
+    },
+    {
+        finalNumber: 88,
+        numChoices: [
+            {firstNum: '22'},
+            {seconNum: '42'},
+            {thirdNum: '4'},
+            {fouthNum: '2'},
+            {fithNum: '1'},
+            {sixthNum: '8'}
+        ],
+    },
+    {
+        finalNumber: 76,
+        numChoices: [
+            {firstNum: '4'},
+            {seconNum: '42'},
+            {thirdNum: '24'},
+            {fouthNum: '6'},
+            {fithNum: '1'},
+            {sixthNum: '3'}
+        ],
+    },
+    {
+        finalNumber: 0,
+        numChoices: [
+            {firstNum: '180'},
+            {seconNum: '5'},
+            {thirdNum: '12'},
+            {fouthNum: '60'},
+            {fithNum: '2'},
+            {sixthNum: '3'}
         ],
     },
 
@@ -77,6 +155,7 @@ function displaySymbol(n){
 // It also handles the submit button
 let currentChallengeIndex = 0;
 let score = 0
+let clicks = 0
 function displayNumber(){
     let currentChallenge = numbers[currentChallengeIndex]
 
@@ -101,9 +180,15 @@ function displayNumber(){
 
     // Click event for each button to display their value on the input screen
     // Make it in a way that each number can only be selected once
-    buttonOne.onclick = ()=>{
-        displayer.value += one
+    console.log(clicks)
+    if (clicks < 1){
+        buttonOne.onclick = ()=>{
+            displayer.value += one
+        }
+ 
     }
+    
+
     buttonTwo.onclick = ()=>{
         displayer.value += two
     }
@@ -150,69 +235,71 @@ function displayNumber(){
             total = eval(displayer.value)
             if (total === currentChallenge.finalNumber){
                 score++;
-                displayer.value = "";
-                buttonOne.textContent = '';
-                buttonTwo.textContent = '';
-                buttonThree.textContent = '';
-                buttonfour.textContent = '';
-                buttonfive.textContent = '',
-                buttonSix.textContent = '';
-
-                document.getElementById("massage").textContent = "Your Final Score Is:"
-                document.getElementById("score").textContent = `${score}`
-
-                let gameContainer = document.getElementById("submit-btn");
-                gameContainer.innerHTML = ""
-
-                if(score === numbers.length){
-                    document.getElementById("my-massage").textContent = "You got a perfect score, you are clearly better at maths than me"
-                }
-
-
             }
     
             else{
                 alert(`I was looking for FINAL NUMBER:${currentChallenge.finalNumber} you gave me ${total}`)
-                displayer.value = "";
-                buttonOne.textContent = '';
-                buttonTwo.textContent = '';
-                buttonThree.textContent = '';
-                buttonfour.textContent = '';
-                buttonfive.textContent = '',
-                buttonSix.textContent = '';
+            }
 
-                document.getElementById("massage").textContent = "Your Final Score Is:"
-                document.getElementById("score").textContent = `${score}`
+            displayer.value = "";
+            buttonOne.textContent = '';
+            buttonTwo.textContent = '';
+            buttonThree.textContent = '';
+            buttonfour.textContent = '';
+            buttonfive.textContent = '',
+            buttonSix.textContent = '';
 
-                let gameContainer = document.getElementById("submit-btn");
-                gameContainer.innerHTML = ""
+            document.getElementById("massage").textContent = "Your Final Score Is:"
+            document.getElementById("score").textContent = `${score}`
+            document.getElementById("final").textContent = ''
 
-                if(score === numbers.length){
-                    document.getElementById("my-massage").textContent = "You got a perfect score, you are clearly better at maths than me"
-                }
+            let gameContainer = document.getElementById("submit-btn");
+            gameContainer.innerHTML = ""
+
+
+            // Result system
+            let result = document.getElementById("my-massage");
+
+            if(score === numbers.length){
+                result.textContent = "You got a perfect score, you are clearly better at maths than me"
+            }
+
+            else if(score >= 5){
+                result.textContent = `${score} out of 10 not bad...At least you are better at maths than me`
+            }
+
+            else if (score < 5 && score >=1){
+                result.textContent = `${score} out of 10...Me and you we the same, we dont know maths`
+            }
+
+            else if (score === 0){
+                result.textContent = `${score}...I'm just going to keep my mouth shut....`
             }
         }
     }
-/*     document.getElementById("submit").onclick = ()=>{
-        total = eval(displayer.value)
-        displayNumber()
-        if (currentChallengeIndex <= numbers.length){
-            if (total === currentChallenge.finalNumber){
-                score++;
-                displayer.value = ""
-            }
-
-            else{
-                alert(`I was looking for FINAL NUMBER:${currentChallenge.finalNumber} you gave me ${total}`)
-                displayer.value = ""
-            }
-        }
-
-        else{
-            console.log("Game Over")
-        }
-    } */
 }
 
 displayNumber()
-console.log(score)
+
+
+// Intersection observer
+
+/// this class takes a callback function in its instructor
+// It can observer multiple elelmnts or entries at the same time
+// The function will run anytime the visisbilty of one of the observed elements changes
+const observer = new IntersectionObserver((entries) => {
+    // Becase it handles multiple entries will need forEach to loop over them
+    entries.forEach((entry) => {
+        // Check if its intersecting the viewport or not
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }else{
+            entry.target.classList.remove("show");
+        }
+    });
+});
+
+// grabb all the elemements with the .hidden class
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
+// I watched a yputube tutorial for this one
