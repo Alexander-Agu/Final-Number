@@ -180,30 +180,30 @@ function displayNumber(){
 
     // Click event for each button to display their value on the input screen
     // Make it in a way that each number can only be selected once
-    console.log(clicks)
-    if (clicks < 1){
-        buttonOne.onclick = ()=>{
-            displayer.value += one
-        }
- 
-    }
-    
-
+    buttonOne.onclick = ()=>{
+        displayer.value += one;
+        buttonOne.onclick = null;
+    };
     buttonTwo.onclick = ()=>{
-        displayer.value += two
-    }
+        displayer.value += two;
+        buttonTwo.onclick = null;
+    };
     buttonThree.onclick = ()=>{
-        displayer.value += three
+        displayer.value += three;
+        buttonThree.onclick = null;
     }
     buttonfour.onclick = ()=>{
-        displayer.value += four
-    }
+        displayer.value += four;
+        buttonfour.onclick = null;
+    };
     buttonfive.onclick = ()=>{
-        displayer.value += five
-    }
+        displayer.value += five;
+        buttonfive.onclick = null;
+    };
     buttonSix.onclick = ()=>{
-        displayer.value += six
-    }
+        displayer.value += six;
+        buttonSix.onclick = null;
+    };
 
 
     console.log(currentChallengeIndex)
