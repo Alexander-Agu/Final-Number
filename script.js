@@ -191,7 +191,7 @@ function displayNumber(){
     buttonThree.onclick = ()=>{
         displayer.value += three;
         buttonThree.onclick = null;
-    }
+    };
     buttonfour.onclick = ()=>{
         displayer.value += four;
         buttonfour.onclick = null;
