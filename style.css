@@ -221,18 +221,30 @@
         width: 50%;
         height: 100px;
 
+        display: flex;
+
     }
 
     #display    {
         height: 100%;
-        width: 100%;
+        width: 80%;
         border: none;
         outline: none;
         background-color: rgba(255, 0, 0, 0.685);
-        border-radius: 12px;
+        border-radius: 12px 0px 0px 12px;
         text-align: center;
         font-size: 30px;
 
+    }
+
+    .displayer button   {
+        width: 20%;
+        font-size: 22px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: black;
+        color: red;
+        border: none;
+        border-radius: 0px 12px 12px 0px;
     }
 
     /* > Keys */
@@ -526,6 +538,16 @@
             text-align: center;
             font-size: 18px;
             font-weight: bolder;
+            border-radius: 12px 0px 0px 12px;
+
+        }
+
+        .displayer button   {
+            width: 20%;
+            font-size: 15px;
+            color: red;
+            border: none;
+            border-radius: 0px 12px 12px 0px;
         }
 
     /* > Keys */

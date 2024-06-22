@@ -149,6 +149,10 @@ const numbers = [
 // It should only display 1 symbol at a time
 function displaySymbol(n){
     displayer.value += n
+
+    if (n === ""){
+        displayer.value = ""
+    }
 }
 
 // A function that display the number values on the input 
@@ -181,11 +185,11 @@ function displayNumber(){
     // Click event for each button to display their value on the input screen
     // Make it in a way that each number can only be selected once
     buttonOne.onclick = ()=>{
-        displayer.value += one;
+        displayer.value += one
         buttonOne.onclick = null;
     };
     buttonTwo.onclick = ()=>{
-        displayer.value += two;
+        displayer.value += two
         buttonTwo.onclick = null;
     };
     buttonThree.onclick = ()=>{
@@ -202,7 +206,6 @@ function displayNumber(){
     };
     buttonSix.onclick = ()=>{
         displayer.value += six;
-        buttonSix.onclick = null;
     };
 
 
@@ -217,13 +220,14 @@ function displayNumber(){
             total = eval(displayer.value)   
             if (total === currentChallenge.finalNumber){
                 score++;
-                displayer.value = ""
+                alert("You Got the final anaswer right!!")
             }
     
             else{
                 alert(`I was looking for FINAL NUMBER:${currentChallenge.finalNumber} you gave me ${total}`)
-                displayer.value = ""
+
             }
+            displayer.value = ""
         }
     }
 
@@ -235,6 +239,7 @@ function displayNumber(){
             total = eval(displayer.value)
             if (total === currentChallenge.finalNumber){
                 score++;
+                alert("You Got the final anaswer right!!")
             }
     
             else{
@@ -281,9 +286,12 @@ function displayNumber(){
 
 displayNumber()
 
+function clearDisplay(){
+    displayer.value = ""
+    displayNumber()
+}
 
 // Intersection observer
-
 /// this class takes a callback function in its instructor
 // It can observer multiple elelmnts or entries at the same time
 // The function will run anytime the visisbilty of one of the observed elements changes
