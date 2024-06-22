@@ -217,7 +217,14 @@ function displayNumber(){
             currentChallengeIndex++;    // Everytime the submit button is clicked it will increment currentChallengeIndex
 
             displayNumber()     // Using recursion so we can be able to iterate through all the properties of numbers using the currentChallengeIndex incrementation
-            total = eval(displayer.value)   
+            try{
+                total = eval(displayer.value) 
+            } catch(error){
+                alert('Your calculation is flawed')
+                currentChallengeIndex--;
+                displayNumber()
+                displayer.value = ''
+            }
             if (total === currentChallenge.finalNumber){
                 score++;
                 alert("You Got the final anaswer right!!")
